@@ -1,15 +1,15 @@
-#ifndef LABORATORIO_H
-#define LABORATORIO_H
+#ifndef VIDEOGAME_H
+#define VIDEOGAME_H
 
 #include "civilizacion.h"
 #include <vector>
 
-class Laboratorio
+class VideoGame
 {
     vector<Civilizacion> computadoras;
 
 public:
-    Laboratorio();
+    VideoGame();
     void agregarPersonaje(const Civilizacion &p);
     void mostrar();
     void respaldar_tabla();
@@ -23,7 +23,7 @@ public:
     void ordenar();
     Civilizacion* buscar(const Civilizacion &c);
 
-    friend Laboratorio& operator<<(Laboratorio &v, const Civilizacion &p)
+    friend VideoGame& operator<<(VideoGame &v, const Civilizacion &p)
     {
         v.agregarPersonaje(p);
 
