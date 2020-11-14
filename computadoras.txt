@@ -1,0 +1,16 @@
+windows
+javier
+1TB
+4
+windows
+daniel
+1TB
+8
+windows
+adrian
+1TB
+4
+windows
+luna
+500GB
+4
