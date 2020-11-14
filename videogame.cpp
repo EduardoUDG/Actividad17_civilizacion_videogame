@@ -1,18 +1,18 @@
-#include "laboratorio.h"
+#include "videogame.h"
 #include <fstream>
 #include <algorithm>
 
-Laboratorio::Laboratorio()
+VideoGame::VideoGame()
 {
 
 }
 
-void Laboratorio::agregarPersonaje(const Civilizacion &p)
+void VideoGame::agregarPersonaje(const Civilizacion &p)
 {   
     computadoras.push_back(p);
 }
 
-void Laboratorio::mostrar()
+void VideoGame::mostrar()
 {
     cout << left;
     cout << setw(20) << "Sistema Operativo";
@@ -33,7 +33,7 @@ void Laboratorio::mostrar()
     
 }
 
-void Laboratorio::respaldar_tabla(){
+void VideoGame::respaldar_tabla(){
     ofstream archivo("computadoras_tabla.txt");
     if (archivo.is_open()) {
 
@@ -52,7 +52,7 @@ void Laboratorio::respaldar_tabla(){
     archivo.close();
 }
 
-void Laboratorio::respaldar(){
+void VideoGame::respaldar(){
     ofstream archivo("computadoras.txt");
     if (archivo.is_open()) {
         for (size_t i = 0; i < computadoras.size(); i++){
@@ -66,7 +66,7 @@ void Laboratorio::respaldar(){
     archivo.close();
 }
 
-void Laboratorio::recuperar(){
+void VideoGame::recuperar(){
     ifstream archivo("computadoras.txt");
     if (archivo.is_open()){
         string temp;
@@ -95,27 +95,27 @@ void Laboratorio::recuperar(){
     archivo.close();
 }
 
-void Laboratorio::insertar(const Civilizacion &c, size_t pos){
+void VideoGame::insertar(const Civilizacion &c, size_t pos){
     computadoras.insert(computadoras. begin()+pos, c);
 }
 
-size_t Laboratorio::size(){
+size_t VideoGame::size(){
     return computadoras.size();
 }
 
-void Laboratorio::inicializar(const Civilizacion &c, size_t n){
+void VideoGame::inicializar(const Civilizacion &c, size_t n){
  computadoras = vector<Civilizacion>(n, c);
 }
 
-void Laboratorio::eliminar(size_t pos){
+void VideoGame::eliminar(size_t pos){
     computadoras.erase(computadoras.begin()+pos);
 }
 
-void Laboratorio::ordenar(){
+void VideoGame::ordenar(){
     sort(computadoras.begin(), computadoras.end());
 }
 
-Civilizacion* Laboratorio::buscar(const Civilizacion &c){
+Civilizacion* VideoGame::buscar(const Civilizacion &c){
     // vector<Computadora>::iterator
     auto it = find(computadoras.begin(), computadoras.end(), c);
 
