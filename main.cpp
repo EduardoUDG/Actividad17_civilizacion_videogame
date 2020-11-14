@@ -2,13 +2,13 @@
 #include<conio.h>
 #include<cstdlib>
 
-#include "laboratorio.h"
+#include "videogame.h"
 
 using namespace std;
 
 int main(){
 
-    Laboratorio l;
+    VideoGame l;
     string op;
 
     while (true){
