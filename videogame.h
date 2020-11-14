@@ -5,7 +5,7 @@
 #include <vector>
 
 class VideoGame
-{
+{ 
     vector<Civilizacion> _civilizacion;
 
 public:
