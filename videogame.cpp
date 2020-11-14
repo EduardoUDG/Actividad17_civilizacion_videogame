@@ -9,7 +9,7 @@ VideoGame::VideoGame()
 
 void VideoGame::agregarPersonaje(const Civilizacion &p)
 {   
-    computadoras.push_back(p);
+    _civilizacion.push_back(p);
 }
 
 void VideoGame::mostrar()
@@ -21,8 +21,8 @@ void VideoGame::mostrar()
     cout << setw(15) << "RAM";
     cout << endl;
 
-    for (size_t i = 0; i < computadoras.size(); i++){
-        Civilizacion &p = computadoras[i];
+    for (size_t i = 0; i < _civilizacion.size(); i++){
+        Civilizacion &p = _civilizacion[i];
         cout << p;
         // cout<<"Sistema Operativo: "<<p.getSo()<<endl;
         // cout<<"Nombre de Usuario: "<<p.getNomuser()<<endl;
@@ -34,7 +34,7 @@ void VideoGame::mostrar()
 }
 
 void VideoGame::respaldar_tabla(){
-    ofstream archivo("computadoras_tabla.txt");
+    ofstream archivo("_civilizacion_tabla.txt");
     if (archivo.is_open()) {
 
         archivo << left;
@@ -44,8 +44,8 @@ void VideoGame::respaldar_tabla(){
         archivo << setw(15) << "RAM";
         archivo << endl;
 
-        for (size_t i = 0; i < computadoras.size(); i++){
-            Civilizacion &p = computadoras[i];
+        for (size_t i = 0; i < _civilizacion.size(); i++){
+            Civilizacion &p = _civilizacion[i];
             archivo << p;
         }
     }
@@ -53,10 +53,10 @@ void VideoGame::respaldar_tabla(){
 }
 
 void VideoGame::respaldar(){
-    ofstream archivo("computadoras.txt");
+    ofstream archivo("_civilizacion.txt");
     if (archivo.is_open()) {
-        for (size_t i = 0; i < computadoras.size(); i++){
-            Civilizacion &p = computadoras[i];
+        for (size_t i = 0; i < _civilizacion.size(); i++){
+            Civilizacion &p = _civilizacion[i];
             archivo << p.getSo()<< endl;
             archivo << p.getNomuser()<< endl;
             archivo << p.getAlmacenamiento()<< endl;
@@ -67,7 +67,7 @@ void VideoGame::respaldar(){
 }
 
 void VideoGame::recuperar(){
-    ifstream archivo("computadoras.txt");
+    ifstream archivo("_civilizacion.txt");
     if (archivo.is_open()){
         string temp;
         int ram;
@@ -96,30 +96,30 @@ void VideoGame::recuperar(){
 }
 
 void VideoGame::insertar(const Civilizacion &c, size_t pos){
-    computadoras.insert(computadoras. begin()+pos, c);
+    _civilizacion.insert(_civilizacion. begin()+pos, c);
 }
 
 size_t VideoGame::size(){
-    return computadoras.size();
+    return _civilizacion.size();
 }
 
 void VideoGame::inicializar(const Civilizacion &c, size_t n){
- computadoras = vector<Civilizacion>(n, c);
+ _civilizacion = vector<Civilizacion>(n, c);
 }
 
 void VideoGame::eliminar(size_t pos){
-    computadoras.erase(computadoras.begin()+pos);
+    _civilizacion.erase(_civilizacion.begin()+pos);
 }
 
 void VideoGame::ordenar(){
-    sort(computadoras.begin(), computadoras.end());
+    sort(_civilizacion.begin(), _civilizacion.end());
 }
 
 Civilizacion* VideoGame::buscar(const Civilizacion &c){
     // vector<Computadora>::iterator
-    auto it = find(computadoras.begin(), computadoras.end(), c);
+    auto it = find(_civilizacion.begin(), _civilizacion.end(), c);
 
-    if (it == computadoras.end()){
+    if (it == _civilizacion.end()){
         return nullptr;
     }
     else {
