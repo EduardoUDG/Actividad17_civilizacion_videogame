@@ -31,7 +31,7 @@ int main(){
 
 
         if (op == "1"){
-            Computadora c;
+            Civilizacion c;
 
             cin >> c;
 
@@ -51,7 +51,7 @@ int main(){
             l.recuperar();
         }
         else if (op == "5"){
-            Computadora c;
+            Civilizacion c;
             cin >> c;
 
             size_t pos;
@@ -67,7 +67,7 @@ int main(){
             
         }
         else if (op == "6"){
-            Computadora c;
+            Civilizacion c;
             cin >> c;
 
             size_t n;
@@ -92,10 +92,10 @@ int main(){
             l.ordenar();
         }
         else if (op == "9"){
-            Computadora c;
+            Civilizacion c;
             cin >> c; cin.ignore();
 
-            Computadora *ptr = l.buscar(c);
+            Civilizacion *ptr = l.buscar(c);
             if (ptr == nullptr){
                 cout << "No encontrado" << endl;
             }
