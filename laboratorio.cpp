@@ -7,7 +7,7 @@ Laboratorio::Laboratorio()
 
 }
 
-void Laboratorio::agregarPersonaje(const Computadora &p)
+void Laboratorio::agregarPersonaje(const Civilizacion &p)
 {   
     computadoras.push_back(p);
 }
@@ -22,7 +22,7 @@ void Laboratorio::mostrar()
     cout << endl;
 
     for (size_t i = 0; i < computadoras.size(); i++){
-        Computadora &p = computadoras[i];
+        Civilizacion &p = computadoras[i];
         cout << p;
         // cout<<"Sistema Operativo: "<<p.getSo()<<endl;
         // cout<<"Nombre de Usuario: "<<p.getNomuser()<<endl;
@@ -45,7 +45,7 @@ void Laboratorio::respaldar_tabla(){
         archivo << endl;
 
         for (size_t i = 0; i < computadoras.size(); i++){
-            Computadora &p = computadoras[i];
+            Civilizacion &p = computadoras[i];
             archivo << p;
         }
     }
@@ -56,7 +56,7 @@ void Laboratorio::respaldar(){
     ofstream archivo("computadoras.txt");
     if (archivo.is_open()) {
         for (size_t i = 0; i < computadoras.size(); i++){
-            Computadora &p = computadoras[i];
+            Civilizacion &p = computadoras[i];
             archivo << p.getSo()<< endl;
             archivo << p.getNomuser()<< endl;
             archivo << p.getAlmacenamiento()<< endl;
@@ -71,7 +71,7 @@ void Laboratorio::recuperar(){
     if (archivo.is_open()){
         string temp;
         int ram;
-        Computadora p;
+        Civilizacion p;
 
         while (true){
             getline(archivo, temp); //sistema operativo
@@ -95,7 +95,7 @@ void Laboratorio::recuperar(){
     archivo.close();
 }
 
-void Laboratorio::insertar(const Computadora &c, size_t pos){
+void Laboratorio::insertar(const Civilizacion &c, size_t pos){
     computadoras.insert(computadoras. begin()+pos, c);
 }
 
@@ -103,8 +103,8 @@ size_t Laboratorio::size(){
     return computadoras.size();
 }
 
-void Laboratorio::inicializar(const Computadora &c, size_t n){
- computadoras = vector<Computadora>(n, c);
+void Laboratorio::inicializar(const Civilizacion &c, size_t n){
+ computadoras = vector<Civilizacion>(n, c);
 }
 
 void Laboratorio::eliminar(size_t pos){
@@ -115,7 +115,7 @@ void Laboratorio::ordenar(){
     sort(computadoras.begin(), computadoras.end());
 }
 
-Computadora* Laboratorio::buscar(const Computadora &c){
+Civilizacion* Laboratorio::buscar(const Civilizacion &c){
     // vector<Computadora>::iterator
     auto it = find(computadoras.begin(), computadoras.end(), c);
 
