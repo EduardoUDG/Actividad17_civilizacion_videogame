@@ -6,7 +6,7 @@
 
 class VideoGame
 {
-    vector<Civilizacion> computadoras;
+    vector<Civilizacion> _civilizacion;
 
 public:
     VideoGame();
