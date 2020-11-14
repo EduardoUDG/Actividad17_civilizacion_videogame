@@ -29,7 +29,6 @@ int main(){
 
 
 
-
         if (op == "1"){
             Civilizacion c;
 
