@@ -1,38 +1,38 @@
-#include "computadora.h"
+#include "civilizacion.h"
 
-Computadora::Computadora()
+Civilizacion::Civilizacion()
 {
 
 }
 
-Computadora::Computadora(const string &so, const string &nomuser, const string &almacenamiento, int ram)
+Civilizacion::Civilizacion(const string &so, const string &nomuser, const string &almacenamiento, int ram)
 {
     this->so = so;
     this->nomuser = nomuser;
     this->almacenamiento = almacenamiento;
     this->ram = ram;
 }
-void Computadora::setSo(const string &v){
+void Civilizacion::setSo(const string &v){
     so = v;
 }
-string Computadora::getSo(){
+string Civilizacion::getSo(){
     return so;
 }
-void Computadora::setNomuser(const string &v){
+void Civilizacion::setNomuser(const string &v){
     nomuser = v;
 }
-string Computadora::getNomuser(){
+string Civilizacion::getNomuser(){
     return nomuser;
 }
-void Computadora::setAlmacenamiento(const string &v){
+void Civilizacion::setAlmacenamiento(const string &v){
     almacenamiento = v;
 }
-string Computadora::getAlmacenamiento(){
+string Civilizacion::getAlmacenamiento(){
     return almacenamiento;
 }
-void Computadora::setRam(int v){
+void Civilizacion::setRam(int v){
     ram = v;
 }
-int Computadora::getRam(){
+int Civilizacion::getRam(){
     return ram;
 }
