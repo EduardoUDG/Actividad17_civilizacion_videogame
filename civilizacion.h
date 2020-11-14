@@ -1,5 +1,5 @@
-#ifndef COMPUTADORA_H
-#define COMPUTADORA_H
+#ifndef CIVILIZACION_H
+#define CIVILIZACION_H
 
 #include<iostream>
 #include<conio.h>
@@ -8,15 +8,15 @@
 
 using namespace std;
 
-class Computadora{
+class Civilizacion{
 private:
     string so;
     string nomuser;
     string almacenamiento;
     int ram;
 public:
-    Computadora();
-    Computadora(const string &so, 
+    Civilizacion();
+    Civilizacion(const string &so, 
               const string &nomuser,
               const string &almacenamiento,
               int ram);
@@ -30,54 +30,54 @@ public:
     int getRam();
 
     /* Primera carga de operador */
-    friend ostream& operator<<(ostream &out, const Computadora &p)
+    friend ostream& operator<<(ostream &out, const Civilizacion &c)
     {
         out << left;
-        out << setw(20) << p.so;
-        out << setw(20) << p.nomuser;
-        out << setw(20) << p.almacenamiento;
-        out << setw(15) << p.ram;
+        out << setw(20) << c.so;
+        out << setw(20) << c.nomuser;
+        out << setw(20) << c.almacenamiento;
+        out << setw(15) << c.ram;
         out << endl;
         return out;
     }
 
     /* Segunda carga de extraccion */
-    friend istream& operator>>(istream &in, Computadora &p)
+    friend istream& operator>>(istream &in, Civilizacion &c)
     {
         // string temp;
         // float fuerza;
         // int salud; 
 
         cout << "Sistema Operativo: ";
-        getline(cin, p.so);
+        getline(cin, c.so);
         
         cout << "Nombre usuario: ";
-        getline(cin, p.nomuser);
+        getline(cin, c.nomuser);
         
         cout << "Almacenamiento: ";
-        getline(cin, p.almacenamiento);
+        getline(cin, c.almacenamiento);
         
         cout << "RAM: ";
-        cin >> p.ram;
+        cin >> c.ram;
 
 
 
         return in;
     } 
 
-    bool operator==(const Computadora& c){
+    bool operator==(const Civilizacion& c){
         return nomuser == c.nomuser;
     }
     
-    bool operator==(const Computadora& c) const{
+    bool operator==(const Civilizacion& c) const{
         return nomuser == c.nomuser;
     }
 
-    bool operator<(const Computadora& c){ 
+    bool operator<(const Civilizacion& c){ 
         return nomuser < c.nomuser;
     }
 
-    bool operator<(const Computadora& c) const{ 
+    bool operator<(const Civilizacion& c) const{ 
         return nomuser < c.nomuser;
     }
 };
