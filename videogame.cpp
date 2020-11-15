@@ -114,6 +114,25 @@ void VideoGame::inicializar(const Civilizacion &c, size_t n){
 void VideoGame::eliminar(size_t pos){
     _civilizacion.erase(_civilizacion.begin()+pos);
 }
+
+void VideoGame::primera(){
+    if (_civilizacion.empty()){
+        cout << "Vector esta vacio" << endl;
+    }
+    else {
+        cout << _civilizacion.front() << endl;
+    }
+}
+
+void VideoGame::ultimo(){
+    if (_civilizacion.empty()){
+        cout << "Vector esta vacio" << endl;
+    }
+    else {
+        cout << _civilizacion.back() << endl;
+    }
+}
+
 /* ----------------------------------------------------- */
 void VideoGame::ordenarNombre(){
     sort(_civilizacion.begin(), _civilizacion.end(),
