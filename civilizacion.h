@@ -10,16 +10,17 @@ using namespace std;
 
 class Civilizacion{
 private:
-    string so;
-    string nomuser;
-    string almacenamiento;
-    int ram;
+    string nombre;
+    int ubicacionX;
+    int ubicacionY;
+    float puntuacion;
 public:
     Civilizacion();
-    Civilizacion(const string &so, 
-              const string &nomuser,
-              const string &almacenamiento,
-              int ram);
+    Civilizacion(const string &nombre, 
+              float &ubicacionX,
+              float &ubicacionY,
+              int puntuacion);
+              
     void setSo(const string &v);
     string getSo();
     void setNomuser(const string &v);
