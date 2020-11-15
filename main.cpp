@@ -26,6 +26,8 @@ int main(){
         cout << "10) Ordenar UbicacionX" << endl;
         cout << "11) Ordenar UbicacionY" << endl;
         cout << "12) Ordenar Puntuacion" << endl;
+        cout << "13) Primera" << endl;
+        cout << "14) Ultimo" << endl;
         cout << "9) Buscar" << endl;
         cout << "0) Salir" << endl;
         cout << "Opcion:" << endl;
@@ -102,6 +104,16 @@ int main(){
         }
         else if (op == "12"){
             l.ordenarPuntuacion();
+        }
+        else if (op == "13"){
+            l.primera();
+            cout << endl;
+            system("pause");
+        }
+        else if (op == "14"){
+            l.ultimo();
+            cout << endl;
+            system("pause");
         }
         else if (op == "9"){
             Civilizacion c;
