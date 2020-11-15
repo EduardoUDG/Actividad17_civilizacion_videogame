@@ -22,7 +22,10 @@ int main(){
         cout << "5) Insertar" << endl;
         cout << "6) Inicializar" << endl;
         cout << "7) Eliminar" << endl;
-        cout << "8) Ordenar" << endl;
+        cout << "8) Ordenar Nombre" << endl;
+        cout << "10) Ordenar UbicacionX" << endl;
+        cout << "11) Ordenar UbicacionY" << endl;
+        cout << "12) Ordenar Puntuacion" << endl;
         cout << "9) Buscar" << endl;
         cout << "0) Salir" << endl;
         cout << "Opcion:" << endl;
@@ -89,7 +92,16 @@ int main(){
             }
         }
         else if (op == "8"){
-            l.ordenar();
+            l.ordenarNombre();
+        }
+        else if (op == "10"){
+            l.ordenarUbicacionX();
+        }
+        else if (op == "11"){
+            l.ordenarUbicacionY();
+        }
+        else if (op == "12"){
+            l.ordenarPuntuacion();
         }
         else if (op == "9"){
             Civilizacion c;
