@@ -20,6 +20,8 @@ public:
     size_t size();
     void inicializar(const Civilizacion &c, size_t n);
     void eliminar(size_t pos);
+    void primera();
+    void ultimo();
     void ordenarNombre();
     void ordenarUbicacionX();
     void ordenarUbicacionY();
