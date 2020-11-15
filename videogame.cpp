@@ -38,10 +38,10 @@ void VideoGame::respaldar_tabla(){
     if (archivo.is_open()) {
 
         archivo << left;
-        archivo << setw(20) << "Sistema Operativo";
-        archivo << setw(20) << "Nombre Usuario";
-        archivo << setw(20) << "Almacenamiento";
-        archivo << setw(15) << "RAM";
+        archivo << setw(20) << "Nombre";
+        archivo << setw(20) << "Ubicacion en X";
+        archivo << setw(20) << "Ubicacion en Y";
+        archivo << setw(15) << "Puntuacion";
         archivo << endl;
 
         for (size_t i = 0; i < _civilizacion.size(); i++){
@@ -57,10 +57,10 @@ void VideoGame::respaldar(){
     if (archivo.is_open()) {
         for (size_t i = 0; i < _civilizacion.size(); i++){
             Civilizacion &p = _civilizacion[i];
-            archivo << p.getSo()<< endl;
-            archivo << p.getNomuser()<< endl;
-            archivo << p.getAlmacenamiento()<< endl;
-            archivo << p.getRam()<< endl;
+            archivo << p.getNombre()<< endl;
+            archivo << p.getUbicacionX()<< endl;
+            archivo << p.getUbicacionY()<< endl;
+            archivo << p.getPuntuacion()<< endl;
         }
     }
     archivo.close();
@@ -76,17 +76,19 @@ void VideoGame::recuperar(){
         while (true){
             getline(archivo, temp); //sistema operativo
             if(archivo.eof()){ break;}
-            p.setSo(temp);
+            p.setNombre(temp);
 
             getline(archivo, temp); // nombre usuario
-            p.setNomuser(temp);
+            ubicacionX = stof(temp);
+            p.setUbicacionX(ubicacionX);
             
             getline(archivo, temp); // Almacenamiento
-            p.setAlmacenamiento(temp);
+            ubicacionY = stof(temp);
+            p.setUbicacionY(ubicacionY);
             
             getline(archivo, temp); // memoria RAM
-            ram = stoi(temp);       // string to int
-            p.setRam(ram);
+            puntuacion = stoi(temp);       // string to int
+            p.setPuntuacion(puntuacion);
 
             agregarPersonaje(p);
         }
