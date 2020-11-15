@@ -114,9 +114,22 @@ void VideoGame::inicializar(const Civilizacion &c, size_t n){
 void VideoGame::eliminar(size_t pos){
     _civilizacion.erase(_civilizacion.begin()+pos);
 }
-
-void VideoGame::ordenar(){
-    sort(_civilizacion.begin(), _civilizacion.end());
+/* ----------------------------------------------------- */
+void VideoGame::ordenarNombre(){
+    sort(_civilizacion.begin(), _civilizacion.end(),
+    [](Civilizacion c1, Civilizacion c2){return c1.getNombre() < c2.getNombre();});
+}
+void VideoGame::ordenarUbicacionX(){
+    sort(_civilizacion.begin(), _civilizacion.end(),
+    [](Civilizacion c1, Civilizacion c2){return c1.getUbicacionX() < c2.getUbicacionX();});
+}
+void VideoGame::ordenarUbicacionY(){
+    sort(_civilizacion.begin(), _civilizacion.end(),
+    [](Civilizacion c1, Civilizacion c2){return c1.getUbicacionY() < c2.getUbicacionY();});
+}
+void VideoGame::ordenarPuntuacion(){
+    sort(_civilizacion.begin(), _civilizacion.end(),
+    [](Civilizacion c1, Civilizacion c2){return c1.getPuntuacion() < c2.getPuntuacion();});
 }
 
 Civilizacion* VideoGame::buscar(const Civilizacion &c){
