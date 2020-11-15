@@ -20,7 +20,10 @@ public:
     size_t size();
     void inicializar(const Civilizacion &c, size_t n);
     void eliminar(size_t pos);
-    void ordenar();
+    void ordenarNombre();
+    void ordenarUbicacionX();
+    void ordenarUbicacionY();
+    void ordenarPuntuacion();
     Civilizacion* buscar(const Civilizacion &c);
 
     friend VideoGame& operator<<(VideoGame &v, const Civilizacion &p)
