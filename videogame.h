@@ -18,6 +18,7 @@ public:
 
     void insertar(const Civilizacion &c, size_t pos);
     size_t size();
+    size_t total();
     void inicializar(const Civilizacion &c, size_t n);
     void eliminar(size_t pos);
     void primera();
