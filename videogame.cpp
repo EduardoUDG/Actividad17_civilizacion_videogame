@@ -106,6 +106,9 @@ void VideoGame::insertar(const Civilizacion &c, size_t pos){
 size_t VideoGame::size(){
     return _civilizacion.size();
 }
+size_t VideoGame::total(){
+    return _civilizacion.size();
+}
 
 void VideoGame::inicializar(const Civilizacion &c, size_t n){
  _civilizacion = vector<Civilizacion>(n, c);
