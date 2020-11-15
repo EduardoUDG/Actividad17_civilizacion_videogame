@@ -74,23 +74,23 @@ void VideoGame::recuperar(){
         Civilizacion p;
 
         while (true){
-            getline(archivo, temp); //sistema operativo
-            if(archivo.eof()){ break;}
-            p.setNombre(temp);
+            // getline(archivo, temp); //sistema operativo
+            // if(archivo.eof()){ break;}
+            // p.setNombre(temp);
 
-            getline(archivo, temp); // nombre usuario
-            ubicacionX = stof(temp);
-            p.setUbicacionX(ubicacionX);
+            // getline(archivo, temp); // nombre usuario
+            // ubicacionX = stof(temp);
+            // p.setUbicacionX(ubicacionX);
             
-            getline(archivo, temp); // Almacenamiento
-            ubicacionY = stof(temp);
-            p.setUbicacionY(ubicacionY);
+            // getline(archivo, temp); // Almacenamiento
+            // ubicacionY = stof(temp);
+            // p.setUbicacionY(ubicacionY);
             
-            getline(archivo, temp); // memoria RAM
-            puntuacion = stoi(temp);       // string to int
-            p.setPuntuacion(puntuacion);
+            // getline(archivo, temp); // memoria RAM
+            // puntuacion = stoi(temp);       // string to int
+            // p.setPuntuacion(puntuacion);
 
-            agregarPersonaje(p);
+            // agregarPersonaje(p);
         }
         
     }
