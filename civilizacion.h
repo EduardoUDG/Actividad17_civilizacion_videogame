@@ -11,33 +11,33 @@ using namespace std;
 class Civilizacion{
 private:
     string nombre;
-    int ubicacionX;
-    int ubicacionY;
+    float ubicacionX;
+    float ubicacionY;
     float puntuacion;
 public:
     Civilizacion();
     Civilizacion(const string &nombre, 
-              float &ubicacionX,
-              float &ubicacionY,
-              int puntuacion);
-              
-    void setSo(const string &v);
-    string getSo();
-    void setNomuser(const string &v);
-    string getNomuser();
-    void setAlmacenamiento(const string &fuerza);
-    string getAlmacenamiento();
-    void setRam(int v);
-    int getRam();
+              float ubicacionX,
+              float ubicacionY,
+              float puntuacion);
+
+    void setNombre(const string &v);
+    float getNombre();
+    void setUbicacionX(float v);
+    float getUbicacionX(float v);
+    void setUbicacionY(float v);
+    float getUbicacionY(float v);
+    void setPuntuacion(float v);
+    float getPuntuacion();
 
     /* Primera carga de operador */
     friend ostream& operator<<(ostream &out, const Civilizacion &c)
     {
         out << left;
-        out << setw(20) << c.so;
-        out << setw(20) << c.nomuser;
-        out << setw(20) << c.almacenamiento;
-        out << setw(15) << c.ram;
+        out << setw(20) << c.nombre;
+        out << setw(20) << c.ubicacionX;
+        out << setw(20) << c.ubicacionY;
+        out << setw(15) << c.puntuacion;
         out << endl;
         return out;
     }
@@ -49,17 +49,17 @@ public:
         // float fuerza;
         // int salud; 
 
-        cout << "Sistema Operativo: ";
-        getline(cin, c.so);
+        cout << "Nombre: ";
+        getline(cin, c.nombre);
         
-        cout << "Nombre usuario: ";
-        getline(cin, c.nomuser);
+        cout << "Ubicacion en X: ";
+        cin >> c.ubicacionX;
         
-        cout << "Almacenamiento: ";
-        getline(cin, c.almacenamiento);
+        cout << "Ubicacion en Y: ";
+        cin >> c.ubicacionY;
         
-        cout << "RAM: ";
-        cin >> c.ram;
+        cout << "Puntuacion: ";
+        cin >> c.puntuacion;
 
 
 
@@ -67,19 +67,19 @@ public:
     } 
 
     bool operator==(const Civilizacion& c){
-        return nomuser == c.nomuser;
+        return nombre == c.nombre;
     }
     
     bool operator==(const Civilizacion& c) const{
-        return nomuser == c.nomuser;
+        return nombre == c.nombre;
     }
 
     bool operator<(const Civilizacion& c){ 
-        return nomuser < c.nomuser;
+        return nombre < c.nombre;
     }
 
     bool operator<(const Civilizacion& c) const{ 
-        return nomuser < c.nomuser;
+        return nombre < c.nombre;
     }
 };
 
