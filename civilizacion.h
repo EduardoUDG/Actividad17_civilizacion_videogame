@@ -22,11 +22,11 @@ public:
               float puntuacion);
 
     void setNombre(const string &v);
-    float getNombre();
+    string getNombre();
     void setUbicacionX(float v);
-    float getUbicacionX(float v);
+    float getUbicacionX();
     void setUbicacionY(float v);
-    float getUbicacionY(float v);
+    float getUbicacionY();
     void setPuntuacion(float v);
     float getPuntuacion();
 
