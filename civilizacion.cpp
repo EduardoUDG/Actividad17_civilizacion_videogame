@@ -5,34 +5,40 @@ Civilizacion::Civilizacion()
 
 }
 
-Civilizacion::Civilizacion(const string &so, const string &nomuser, const string &almacenamiento, int ram)
+Civilizacion::Civilizacion(const string &nombre, float ubicacionX, float ubicacionY, float puntuacion)
 {
-    this->so = so;
-    this->nomuser = nomuser;
-    this->almacenamiento = almacenamiento;
-    this->ram = ram;
+    this->nombre = nombre;
+    this->ubicacionX = ubicacionX;
+    this->ubicacionY = ubicacionY;
+    this->puntuacion = puntuacion;
 }
-void Civilizacion::setSo(const string &v){
-    so = v;
+void Civilizacion::setNombre(const string &v){
+    nombre = v;
 }
-string Civilizacion::getSo(){
-    return so;
+string Civilizacion::getNombre(){
+    return nombre;
 }
-void Civilizacion::setNomuser(const string &v){
-    nomuser = v;
+/* ------------------------------------ */
+
+void Civilizacion::setUbicacionX(float v){
+    ubicacionX = v;
 }
-string Civilizacion::getNomuser(){
-    return nomuser;
+float Civilizacion::getUbicacionX(){
+    return ubicacionX;
 }
-void Civilizacion::setAlmacenamiento(const string &v){
-    almacenamiento = v;
+
+/* ------------------------------------ */
+void Civilizacion::setUbicacionY(float v){
+    ubicacionY = v;
 }
-string Civilizacion::getAlmacenamiento(){
-    return almacenamiento;
+float Civilizacion::getUbicacionY(){
+    return ubicacionY;
 }
-void Civilizacion::setRam(int v){
-    ram = v;
+
+/* ------------------------------------ */
+void Civilizacion::setPuntuacion(float v){
+    puntuacion = v;
 }
-int Civilizacion::getRam(){
-    return ram;
+float Civilizacion::getPuntuacion(){
+    return puntuacion;
 }
