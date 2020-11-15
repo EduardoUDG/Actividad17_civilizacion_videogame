@@ -28,6 +28,7 @@ int main(){
         cout << "12) Ordenar Puntuacion" << endl;
         cout << "13) Primera" << endl;
         cout << "14) Ultimo" << endl;
+        cout << "15) Total" << endl;
         cout << "9) Buscar" << endl;
         cout << "0) Salir" << endl;
         cout << "Opcion:" << endl;
@@ -112,6 +113,11 @@ int main(){
         }
         else if (op == "14"){
             l.ultimo();
+            cout << endl;
+            system("pause");
+        }
+        else if (op == "15"){
+            cout << "Total de civilizaciones: " << l.total();
             cout << endl;
             system("pause");
         }
