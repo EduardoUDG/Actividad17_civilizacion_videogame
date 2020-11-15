@@ -15,10 +15,10 @@ void VideoGame::agregarPersonaje(const Civilizacion &p)
 void VideoGame::mostrar()
 {
     cout << left;
-    cout << setw(20) << "Sistema Operativo";
-    cout << setw(20) << "Nombre Usuario";
-    cout << setw(20) << "Almacenamiento";
-    cout << setw(15) << "RAM";
+    cout << setw(20) << "Nombre";
+    cout << setw(20) << "Ubicacion en X";
+    cout << setw(20) << "Ubicacion en Y";
+    cout << setw(15) << "Puntuacion";
     cout << endl;
 
     for (size_t i = 0; i < _civilizacion.size(); i++){
