@@ -2,6 +2,7 @@
 #include<conio.h>
 #include<cstdlib>
 
+
 #include "videogame.h"
 
 using namespace std;
@@ -89,7 +90,8 @@ int main(){
 }
 
 void nombreUsuario(){
-     // Pendiente
+     
+
 }
 
 void agregar(){
