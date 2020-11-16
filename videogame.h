@@ -1,3 +1,4 @@
+
 #ifndef VIDEOGAME_H
 #define VIDEOGAME_H
 
@@ -6,10 +7,15 @@
 
 class VideoGame
 { 
+    string nombreGame;
     vector<Civilizacion> _civilizacion;
 
 public:
     VideoGame();
+    VideoGame(const string &nombreGame);
+    void setNombreGame(const string &v);
+    string getNombreGame();
+
     void agregarPersonaje(const Civilizacion &p);
     void mostrar();
     void respaldar_tabla();
