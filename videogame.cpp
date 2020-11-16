@@ -1,3 +1,4 @@
+
 #include "videogame.h"
 #include <fstream>
 #include <algorithm>
@@ -7,6 +8,20 @@ VideoGame::VideoGame()
 
 }
 
+VideoGame::VideoGame(const string &nombreGame){
+    this->nombreGame = nombreGame;
+}
+
+void VideoGame::setNombreGame(const string &v){
+    nombreGame = v;
+}
+
+string VideoGame::getNombreGame(){
+    return nombreGame;
+}
+
+
+/* ------------------------------------------------------ */    
 void VideoGame::agregarPersonaje(const Civilizacion &p)
 {   
     _civilizacion.push_back(p);
@@ -14,13 +29,14 @@ void VideoGame::agregarPersonaje(const Civilizacion &p)
 
 void VideoGame::mostrar()
 {
+
     cout << left;
     cout << setw(20) << "Nombre";
     cout << setw(20) << "Ubicacion en X";
     cout << setw(20) << "Ubicacion en Y";
     cout << setw(15) << "Puntuacion";
     cout << endl;
-
+    for (int i=0;i<80;i++){ cout << "-"; }
     for (size_t i = 0; i < _civilizacion.size(); i++){
         Civilizacion &p = _civilizacion[i];
         cout << p;
