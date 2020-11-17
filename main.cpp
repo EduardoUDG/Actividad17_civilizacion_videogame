@@ -92,10 +92,8 @@ int main(){
 }
 
 void nombreUsuario(){
-    VideoGame u;
 
-    u.setNombreGame("Eduardo");
-    cout << endl;
+    cout << "Nombre usuario: Eduardo" << endl;
 
 }
 

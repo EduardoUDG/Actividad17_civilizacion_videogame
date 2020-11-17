@@ -29,8 +29,7 @@ void VideoGame::agregarPersonaje(const Civilizacion &p)
 
 void VideoGame::mostrar()
 {   
-    VideoGame u;
-    cout << "Nombre de usuario: "<< u.getNombreGame() << endl;
+
 
     cout << left;
     cout << setw(20) << "Nombre";
