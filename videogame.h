@@ -41,6 +41,14 @@ public:
 
         return v;
     }
+
+/* 
+    friend istream& operator>>(istream &in, VideoGame &v){
+        cout << "Nombre de usuario: ";
+        getline(cin, v.nombreGame);
+        
+        return in;
+    }  */
 };
 
 

@@ -1,6 +1,7 @@
 #include<iostream>
 #include<conio.h>
 #include<cstdlib>
+#include<string>
 
 
 #include "videogame.h"
@@ -20,6 +21,7 @@ void modificarCivilizacion();
 void resumen();
 
 VideoGame l;
+
 
 int main(){
     string op;
@@ -90,7 +92,10 @@ int main(){
 }
 
 void nombreUsuario(){
-     
+    VideoGame u;
+
+    u.setNombreGame("Eduardo");
+    cout << endl;
 
 }
 
