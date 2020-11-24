@@ -50,7 +50,7 @@ void VideoGame::mostrar()
     
 }
 
-void VideoGame::respaldar_tabla(){
+/* void VideoGame::respaldar_tabla(){
     ofstream archivo("_civilizacion_tabla.txt");
     if (archivo.is_open()) {
 
@@ -67,9 +67,9 @@ void VideoGame::respaldar_tabla(){
         }
     }
     archivo.close();
-}
+} */
 
-void VideoGame::respaldar(){
+/* void VideoGame::respaldar(){
     ofstream archivo("_civilizacion.txt");
     if (archivo.is_open()) {
         for (size_t i = 0; i < _civilizacion.size(); i++){
@@ -81,9 +81,9 @@ void VideoGame::respaldar(){
         }
     }
     archivo.close();
-}
+} */
 
-void VideoGame::recuperar(){
+/* void VideoGame::recuperar(){
     ifstream archivo("_civilizacion.txt");
     if (archivo.is_open()){
         string temp;
@@ -114,7 +114,7 @@ void VideoGame::recuperar(){
         
     }
     archivo.close();
-}
+} */
 
 void VideoGame::insertar(const Civilizacion &c, size_t pos){
     _civilizacion.insert(_civilizacion. begin()+pos, c);
