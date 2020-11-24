@@ -30,14 +30,13 @@ void VideoGame::agregarPersonaje(const Civilizacion &p)
 void VideoGame::mostrar()
 {   
 
-
+    cout << "Invitado" << endl;
     cout << left;
     cout << setw(20) << "Nombre";
     cout << setw(20) << "Ubicacion en X";
     cout << setw(20) << "Ubicacion en Y";
     cout << setw(15) << "Puntuacion";
     cout << endl;
-    for (int i=0;i<80;i++){ cout << "-"; }
     for (size_t i = 0; i < _civilizacion.size(); i++){
         Civilizacion &p = _civilizacion[i];
         cout << p;
