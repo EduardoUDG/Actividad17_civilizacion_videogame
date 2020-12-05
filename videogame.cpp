@@ -187,8 +187,8 @@ Civilizacion* VideoGame::buscar(const Civilizacion &c){
 Civilizacion* VideoGame::modificar(Civilizacion &c)
     {
         int op;
-        string nuevo_nombre;
-        float nuevo_x, nuevo_y, nuevo_puntuacion;
+        string editNomb;
+        float editX, editY, editPun;
         cout << "=============== Menu de Modificar ===============" << endl;
         cout << "1) Modificar el Nombre" << endl;
         cout << "2) Modificar la Ubicacion en X" << endl;
@@ -203,36 +203,35 @@ Civilizacion* VideoGame::modificar(Civilizacion &c)
               case 1:
                     {
                         cout << "Escribe el nuevo nombre" << endl;
-                        getline(cin,nuevo_nombre);
-                        c.setNombre(nuevo_nombre);   
+                        getline(cin,editNomb);
+                        c.setNombre(editNomb);   
                         break;
                     }
 
                 case 2:
                     {   
                         cout << "Escribe la nueva Ubicacion x" << endl;
-                        cin >> nuevo_x; cin.ignore();
-                        c.setUbicacionX(nuevo_x);
+                        cin >> editX; cin.ignore();
+                        c.setUbicacionX(editX);
                         break;
                     }
 
                 case 3:
                     {
                         cout << "Escribe la nueva Ubicacion y" << endl;
-                        cin >> nuevo_y; cin.ignore();
-                        c.setUbicacionY(nuevo_y);        
+                        cin >> editY; cin.ignore();
+                        c.setUbicacionY(editY);        
                         break;
                     }
 
                 case 4:
                     {
                         cout << "Escribe la nueva Puntuacion" << endl;
-                        cin >> nuevo_puntuacion; cin.ignore();
-                        c.setPuntuacion(nuevo_puntuacion);                               
+                        cin >> editPun; cin.ignore();
+                        c.setPuntuacion(editPun);                               
                         break;
                     }  
             }
-        cout << "Nombre actualizado" << endl; 
-        system ("pause");
+        cout << "Registro Actializado" << endl; 
     }
 
