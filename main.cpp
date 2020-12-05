@@ -214,7 +214,7 @@ void modificarCivilizacion(){
         l.modificar(*ptr);
 
     }
-    cout << endl <<"Registro Actializado" << endl;
+    
     cout << endl;
     system("pause");
 }

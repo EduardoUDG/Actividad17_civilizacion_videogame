@@ -219,5 +219,7 @@ Civilizacion* VideoGame::modificar(Civilizacion &c)
             cin >> editPun; cin.ignore();
             c.setPuntuacion(editPun); 
         }
+        cout << endl <<"Registro Actializado" << endl;
+        system("pause");
     }
 
