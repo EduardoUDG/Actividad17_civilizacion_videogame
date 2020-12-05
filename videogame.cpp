@@ -3,14 +3,12 @@
 #include <fstream>
 #include <algorithm>
 
+
 VideoGame::VideoGame()
 {
 
 }
 
-VideoGame::VideoGame(const string &nombreGame){
-    this->nombreGame = nombreGame;
-}
 
 void VideoGame::setNombreGame(const string &v){
     nombreGame = v;
@@ -30,7 +28,6 @@ void VideoGame::agregarPersonaje(const Civilizacion &p)
 void VideoGame::mostrar()
 {   
 
-    cout << "Invitado" << endl;
     cout << left;
     cout << setw(20) << "Nombre";
     cout << setw(20) << "Ubicacion en X";
@@ -182,4 +179,60 @@ Civilizacion* VideoGame::buscar(const Civilizacion &c){
     }
 }
 
+
+/* ------------------------------------------------------------ */
+
+// Modifica
+
+Civilizacion* VideoGame::modificar(Civilizacion &c)
+    {
+        int op;
+        string nuevo_nombre;
+        float nuevo_x, nuevo_y, nuevo_puntuacion;
+        cout << "=============== Menu de Modificar ===============" << endl;
+        cout << "1) Modificar el Nombre" << endl;
+        cout << "2) Modificar la Ubicacion en X" << endl;
+        cout << "3) Modificar la Ubicacion en Y" << endl;
+        cout << "4) Modificar la Puntuacion" << endl;
+        cout << "Selecciona el dato que desee modificar: " << endl;
+        cin >> op; 
+        cin.ignore();
+
+        switch(op)
+            {
+              case 1:
+                    {
+                        cout << "Escribe el nuevo nombre" << endl;
+                        getline(cin,nuevo_nombre);
+                        c.setNombre(nuevo_nombre);   
+                        break;
+                    }
+
+                case 2:
+                    {   
+                        cout << "Escribe la nueva Ubicacion x" << endl;
+                        cin >> nuevo_x; cin.ignore();
+                        c.setUbicacionX(nuevo_x);
+                        break;
+                    }
+
+                case 3:
+                    {
+                        cout << "Escribe la nueva Ubicacion y" << endl;
+                        cin >> nuevo_y; cin.ignore();
+                        c.setUbicacionY(nuevo_y);        
+                        break;
+                    }
+
+                case 4:
+                    {
+                        cout << "Escribe la nueva Puntuacion" << endl;
+                        cin >> nuevo_puntuacion; cin.ignore();
+                        c.setPuntuacion(nuevo_puntuacion);                               
+                        break;
+                    }  
+            }
+        cout << "Nombre actualizado" << endl; 
+        system ("pause");
+    }
 

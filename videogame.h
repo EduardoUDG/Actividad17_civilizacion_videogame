@@ -12,7 +12,6 @@ class VideoGame
 
 public:
     VideoGame();
-    VideoGame(const string &nombreGame);
     void setNombreGame(const string &v);
     string getNombreGame();
 
@@ -33,7 +32,12 @@ public:
     void ordenarUbicacionX();
     void ordenarUbicacionY();
     void ordenarPuntuacion();
+
+
+
     Civilizacion* buscar(const Civilizacion &c);
+    Civilizacion* modificar(Civilizacion &c);
+
 
     friend VideoGame& operator<<(VideoGame &v, const Civilizacion &p)
     {
@@ -42,7 +46,7 @@ public:
         return v;
     }
 
-    friend ostream& operator<<(ostream &out, const VideoGame &c)
+  /*   friend ostream& operator<<(ostream &out, const VideoGame &c)
     {
         out << left;
         out << setw(20) << c.nombreGame;
@@ -54,7 +58,7 @@ public:
         getline(cin, v.nombreGame);
         
         return in;
-    }  
+    }   */
 
 };
 

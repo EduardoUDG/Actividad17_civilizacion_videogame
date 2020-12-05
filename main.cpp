@@ -92,9 +92,8 @@ int main(){
 }
 
 void nombreUsuario(){   
-    VideoGame u;
 
-    cin >> u;
+
 }
 
 void agregar(){
@@ -210,11 +209,10 @@ void modificarCivilizacion(){
     }
     else {
         cout  << endl << endl << "Encontrado" << endl;
+
         cout << *ptr << endl;
-        cout << "Ingrese los nuevos datos:" << endl;
-        
-        cin >> c;
-        cin >> c; cin.ignore();
+        l.modificar(*ptr);
+
     }
     cout << endl;
     system("pause");

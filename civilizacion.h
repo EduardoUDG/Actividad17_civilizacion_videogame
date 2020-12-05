@@ -30,6 +30,8 @@ public:
     void setPuntuacion(float v);
     float getPuntuacion();
 
+    
+
     /* Primera carga de operador */
     friend ostream& operator<<(ostream &out, const Civilizacion &c)
     {
@@ -60,8 +62,6 @@ public:
         
         cout << "Puntuacion: ";
         cin >> c.puntuacion;
-
-
 
         return in;
     } 
