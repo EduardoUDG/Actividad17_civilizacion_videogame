@@ -29,6 +29,8 @@ int main(){
     while (true){
         
         system("cls");
+
+        cout << "\t Usuario:" << l.getNombreGame() << endl;
         cout << "1) Nombre de usuario" << endl;
         cout << "2) Agregar " << endl;
         cout << "3) Insertar " << endl;
@@ -92,7 +94,10 @@ int main(){
 }
 
 void nombreUsuario(){   
-
+    string _nombreGame;
+    cout << "Ingresa de usuario" << endl;
+    getline(cin, _nombreGame);
+    l.setNombreGame(_nombreGame);
 
 }
 
