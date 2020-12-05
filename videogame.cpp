@@ -189,7 +189,7 @@ Civilizacion* VideoGame::modificar(Civilizacion &c)
         int op;
         string editNomb;
         float editX, editY, editPun;
-        cout << "=============== Menu de Modificar ===============" << endl;
+        cout << ".:Modificar Civilizacion:." << endl;
         cout << "1) Modificar el Nombre" << endl;
         cout << "2) Modificar la Ubicacion en X" << endl;
         cout << "3) Modificar la Ubicacion en Y" << endl;
@@ -197,40 +197,27 @@ Civilizacion* VideoGame::modificar(Civilizacion &c)
         cout << "Selecciona el dato que desee modificar: " << endl;
         cin >> op; 
         cin.ignore();
+        cout << endl;
 
-        switch(op)
-            {
-              case 1:
-                    {
-                        cout << "Escribe el nuevo nombre" << endl;
-                        getline(cin,editNomb);
-                        c.setNombre(editNomb);   
-                        break;
-                    }
-
-                case 2:
-                    {   
-                        cout << "Escribe la nueva Ubicacion x" << endl;
-                        cin >> editX; cin.ignore();
-                        c.setUbicacionX(editX);
-                        break;
-                    }
-
-                case 3:
-                    {
-                        cout << "Escribe la nueva Ubicacion y" << endl;
-                        cin >> editY; cin.ignore();
-                        c.setUbicacionY(editY);        
-                        break;
-                    }
-
-                case 4:
-                    {
-                        cout << "Escribe la nueva Puntuacion" << endl;
-                        cin >> editPun; cin.ignore();
-                        c.setPuntuacion(editPun);                               
-                        break;
-                    }  
-            } 
+        if (op == 1){
+            cout << "Ingresa el nombre:" << endl;
+            getline(cin,editNomb);
+            c.setNombre(editNomb);   
+        } 
+        else if (op == 2){
+            cout << "Ingresa la Ubicacion X:" << endl;
+            cin >> editX; cin.ignore();
+            c.setUbicacionX(editX);
+        }
+        else if (op == 3){
+            cout << "Ingresa la Ubicacion Y:" << endl;
+            cin >> editY; cin.ignore();
+            c.setUbicacionY(editY);  
+        }
+        else if (op == 4){
+            cout << "Ingresa la Puntuacion:" << endl;
+            cin >> editPun; cin.ignore();
+            c.setPuntuacion(editPun); 
+        }
     }
 
