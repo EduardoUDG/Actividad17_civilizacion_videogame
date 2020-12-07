@@ -19,6 +19,7 @@ void ultiPos();
 void ordenarCivilizacion();
 void eliminarCivilizacion();
 void buscarCivilizacion();
+void buscarCivilizacionAgregaAldeano();
 void modificarCivilizacion();
 void resumen();
 
@@ -51,7 +52,7 @@ int main(){
         cout << "10) Modifica" << endl;
         cout << "11) Resumen" << endl;
         cout << "12) Salir" << endl;
-        cout << "13) buscar civilizacion" << endl;
+        cout << "13) buscar y agrega aldeano" << endl;
         cout << "Opcion:" << endl;
         getline(cin, op);
 
@@ -95,7 +96,7 @@ int main(){
             break;
         }   
         else if (op == "13"){
-            vectorMenuAldeanos();
+            buscarCivilizacionAgregaAldeano();
         } 
     }
     
@@ -216,6 +217,26 @@ void buscarCivilizacion(){
     else {
         cout << "Encontrado" << endl << endl;
         cout << *ptr << endl;
+        system("pause");
+    }
+    cout << endl;
+    system("pause");
+}
+
+    // Busca civilizacion para agregar aldeano
+void buscarCivilizacionAgregaAldeano(){
+    Civilizacion c;
+    cin >> c; cin.ignore();
+
+    Civilizacion *ptr = l.buscar(c);
+    if (ptr == nullptr){
+        cout << endl << "No encontrado" << endl;
+    }
+    else {
+        cout << endl <<"ENCONTRADO" << endl << endl;
+        system("pause");
+        menuAldeano(*ptr);
+
     }
     cout << endl;
     system("pause");
@@ -250,7 +271,7 @@ void resumen(){
 
 /* ------------------------- VECTOR MENU ALDEANOS -------------------------- */
 
-void vectorMenuAldeanos(){
+/* void vectorMenuAldeanos(){
     string op;
     while (true){
         system ("cls");
@@ -274,7 +295,7 @@ void vectorMenuAldeanos(){
             break;
         }
     }
-}
+} */
 
     // Funcion agregar seleccion
 void agregaSeleccion() {
