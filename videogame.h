@@ -38,6 +38,9 @@ public:
     Civilizacion* buscar(const Civilizacion &c);
     Civilizacion* modificar(Civilizacion &c);
 
+    
+    void respaldarCivilizacion();
+
 
     friend VideoGame& operator<<(VideoGame &v, const Civilizacion &p)
     {
@@ -46,7 +49,10 @@ public:
         return v;
     }
 
-  /*   friend ostream& operator<<(ostream &out, const VideoGame &c)
+
+
+        // Respaldar
+    friend ostream& operator<<(ostream &out, const VideoGame &c)
     {
         out << left;
         out << setw(20) << c.nombreGame;
@@ -58,7 +64,7 @@ public:
         getline(cin, v.nombreGame);
         
         return in;
-    }   */
+    }  
 
 };
 

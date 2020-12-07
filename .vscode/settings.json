@@ -6,6 +6,10 @@
         "string": "cpp",
         "istream": "cpp",
         "iostream": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "xiosbase": "cpp",
+        "initializer_list": "cpp",
+        "list": "cpp",
+        "xutility": "cpp"
     }
 }

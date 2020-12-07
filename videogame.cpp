@@ -46,6 +46,8 @@ void VideoGame::mostrar()
     
 }
 
+
+    // Respaldar archivos
 /* void VideoGame::respaldar_tabla(){
     ofstream archivo("_civilizacion_tabla.txt");
     if (archivo.is_open()) {
@@ -65,21 +67,19 @@ void VideoGame::mostrar()
     archivo.close();
 } */
 
-/* void VideoGame::respaldar(){
-    ofstream archivo("_civilizacion.txt");
+    // Respalda aldeanos
+void VideoGame::respaldarCivilizacion(){
+    ofstream archivo("_civilizaciones.txt", ios::out);
     if (archivo.is_open()) {
-        for (size_t i = 0; i < _civilizacion.size(); i++){
-            Civilizacion &p = _civilizacion[i];
-            archivo << p.getNombre()<< endl;
-            archivo << p.getUbicacionX()<< endl;
-            archivo << p.getUbicacionY()<< endl;
-            archivo << p.getPuntuacion()<< endl;
+        for (int i = 0; i < _civilizacion.size(); ++i){
+            Civilizacion &c = _civilizacion[i];
+            archivo << c.getNombre()<< endl;
         }
     }
     archivo.close();
-} */
+} 
 
-/* void VideoGame::recuperar(){
+void VideoGame::recuperar(){
     ifstream archivo("_civilizacion.txt");
     if (archivo.is_open()){
         string temp;
@@ -110,7 +110,7 @@ void VideoGame::mostrar()
         
     }
     archivo.close();
-} */
+}
 
 void VideoGame::insertar(const Civilizacion &c, size_t pos){
     _civilizacion.insert(_civilizacion. begin()+pos, c);
