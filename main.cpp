@@ -2,13 +2,14 @@
 #include<conio.h>
 #include<cstdlib>
 #include<string>
-
+#include <vector>
 
 #include "videogame.h"
 #include "menualdeano.h"
 
 using namespace std;
 
+    // Civilizacion
 void nombreUsuario();
 void agregar();
 void insertar();
@@ -21,8 +22,14 @@ void buscarCivilizacion();
 void modificarCivilizacion();
 void resumen();
 
-VideoGame l;
 
+    // Aldeanos
+void vectorMenuAldeanos();
+void agregaSeleccion();
+void elegirSeleccion();
+
+VideoGame l;
+vector<Civilizacion> vectorAldeanos;
 
 int main(){
     string op;
@@ -44,6 +51,7 @@ int main(){
         cout << "10) Modifica" << endl;
         cout << "11) Resumen" << endl;
         cout << "12) Salir" << endl;
+        cout << "13) buscar civilizacion" << endl;
         cout << "Opcion:" << endl;
         getline(cin, op);
 
@@ -85,7 +93,10 @@ int main(){
         else if (op == "12"){
             system("pause");
             break;
-        }    
+        }   
+        else if (op == "13"){
+            vectorMenuAldeanos();
+        } 
     }
     
 
@@ -93,7 +104,7 @@ int main(){
     getch();
     return 0;
 }
-
+    // Nombre usuario de civilizacion
 void nombreUsuario(){   
     string _nombreGame;
     cout << "Ingresa de usuario" << endl;
@@ -101,7 +112,7 @@ void nombreUsuario(){
     l.setNombreGame(_nombreGame);
 
 }
-
+    // Agrega civilizacion
 void agregar(){
     Civilizacion c;
 
@@ -111,6 +122,7 @@ void agregar(){
     cin.ignore();
 }
 
+    // Inserta civilizacion
 void insertar(){
     Civilizacion c;
     cin >> c;
@@ -127,6 +139,7 @@ void insertar(){
     }
 }
 
+    // Crea civilizacion
 void crear(){
     Civilizacion c;
     cin >> c;
@@ -137,18 +150,21 @@ void crear(){
     l.inicializar(c, n);
 }
 
+    // Manda civilizacion en primera posicion
 void primPos(){
     l.primera();
     cout << endl;
     system("pause");
 }
 
+    // Manda civilizacion en ultima posicion
 void ultiPos(){
     l.ultimo();
     cout << endl;
     system("pause");
 }
 
+    // Menu de ordenamiento de civilizacion
 void ordenarCivilizacion(){
     string opc;
 
@@ -174,6 +190,7 @@ void ordenarCivilizacion(){
     }
 }
 
+    // Civilizacion
 void eliminarCivilizacion(){
     size_t pos;
     cout << "Posicion: " << endl;
@@ -187,6 +204,7 @@ void eliminarCivilizacion(){
     }
 }
 
+    // Busca civilizacion
 void buscarCivilizacion(){
     Civilizacion c;
     cin >> c; cin.ignore();
@@ -203,6 +221,7 @@ void buscarCivilizacion(){
     system("pause");
 }
 
+    //  Modifica civilizacion
 void modificarCivilizacion(){
     // Modificar
     Civilizacion c;
@@ -214,13 +233,11 @@ void modificarCivilizacion(){
         cout << endl << "No encontrado" << endl;
     }
     else {
-        cout  << endl << endl << "Civilizacion encontrada" << endl;
-
+        cout << endl << endl << "Civilizacion encontrada" << endl;
         cout << *ptr << endl;
         l.modificar(*ptr);
 
     }
-    
     cout << endl;
     system("pause");
 }
@@ -231,3 +248,69 @@ void resumen(){
     system("pause");
 }
 
+/* ------------------------- VECTOR MENU ALDEANOS -------------------------- */
+
+void vectorMenuAldeanos(){
+    string op;
+    while (true){
+        system ("cls");
+        cout << "\t.:MENU CIVILIZACION DE ALDEANOS:." << endl;
+        cout << "1) Agregar Civilizacion" << endl; 
+        cout << "2) Elegir Civilizacion" << endl; 
+        cout << "0) Salir" << endl; 
+        cout << "Opcion: " << endl;
+        getline(cin, op);
+
+        // Agregar seleccion
+        if (op == "1"){
+            agregaSeleccion();
+        } 
+        // Elegir seleccion
+        else if (op == "2"){
+            elegirSeleccion();
+        } 
+        // Salir
+        else if (op == "0"){
+            break;
+        }
+    }
+}
+
+    // Funcion agregar seleccion
+void agregaSeleccion() {
+    string nombre;
+    Civilizacion aldea;
+
+    cout << endl <<"Nombre: " << endl;
+    getline(cin, nombre);
+    aldea.setNombreList(nombre);
+
+    vectorAldeanos.push_back(aldea);
+}
+
+
+    // Funcion vector aldeanos
+void elegirSeleccion(){
+    if (vectorAldeanos.empty()) {
+        cout << endl <<"No hay civilizaciones" << endl;
+        system("pause");
+    } else {
+        for (size_t i=0; i < vectorAldeanos.size(); i++){
+            Civilizacion &aldea = vectorAldeanos[i];
+
+            cout <<i+1 << ") ";
+            cout << aldea.getNombreList() << endl;
+        }
+        cout << "0) Salir" << endl;
+
+        size_t ops;
+        cin >> ops; cin.ignore();
+
+        if (ops > vectorAldeanos.size()){
+            cout << "Opcion invalida" << endl;
+        } else if (ops != 0) {
+            Civilizacion &aldea = vectorAldeanos[ops-1];
+            menuAldeano(aldea);
+        }
+    }
+}
