@@ -203,7 +203,7 @@ void buscarCivilizacion(){
 }
 
 void modificarCivilizacion(){
-    // Pendiente
+    // Modificar
     Civilizacion c;
     cin >> c; cin.ignore();
 
@@ -213,7 +213,7 @@ void modificarCivilizacion(){
         cout << endl << "No encontrado" << endl;
     }
     else {
-        cout  << endl << endl << "Encontrado" << endl;
+        cout  << endl << endl << "Civilizacion encontrada" << endl;
 
         cout << *ptr << endl;
         l.modificar(*ptr);
