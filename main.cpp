@@ -53,8 +53,7 @@ int main(){
         cout << "11) Resumen" << endl;
         cout << "12) Salir" << endl;
         cout << "13) buscar y agrega aldeano" << endl;
-        cout << "14) Respaldar aldeanos" << endl;
-        cout << "15) Recuperar civilizacion" << endl;
+        cout << "14) Respaldar Civilizacion" << endl;
         cout << "Opcion:" << endl;
         getline(cin, op);
 
@@ -101,11 +100,8 @@ int main(){
             buscarCivilizacionAgregaAldeano();
         }
         else if (op == "14"){
-            
-        }
-        else if (op == "15"){
             l.respaldarCivilizacion();
-        }   
+        }  
     }
     
 
