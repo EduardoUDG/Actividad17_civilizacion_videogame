@@ -5,15 +5,24 @@
 #include<conio.h>
 #include<iomanip>
 #include<string>
+#include<list>
 
+
+#include "aldeano.h"
 using namespace std;
 
 class Civilizacion{
 private:
+    // Civilizacion
     string nombre;
     float ubicacionX;
     float ubicacionY;
     float puntuacion;
+
+    // Aldeano
+    string nombreList;
+    list<Aldeano> aldeanos;
+
 public:
     Civilizacion();
     Civilizacion(const string &nombre, 
@@ -32,6 +41,37 @@ public:
 
     
 
+
+    // Aldeano ↓
+    Civilizacion(const string &nombreList):nombreList(nombreList){}
+
+    void setNombreList(const string &nombreList);
+    string getNombreList();
+
+    void agregarFinal(const Aldeano &j);
+    void agregarInicio(const Aldeano &j);
+    void print();
+
+    // eliminar
+    void eliminarNombre(const string &nombre);
+    void eliminarEdad();
+    void eliminarSalud(int salud);
+
+    // ordenar
+    void ordenarNombre();
+    void ordenarEdad();
+    void ordenarSalud();
+    void mostrar();
+
+    
+    void buscarNombreAldeano(const string &nombre);
+    void buscarAldeano(const string &nombre);
+    Aldeano* modificarAldeano(Aldeano &c);
+
+
+
+
+    // Civilizacion
     /* Primera carga de operador */
     friend ostream& operator<<(ostream &out, const Civilizacion &c)
     {
@@ -43,7 +83,8 @@ public:
         out << endl;
         return out;
     }
-
+    
+    // Civilizacion
     /* Segunda carga de extraccion */
     friend istream& operator>>(istream &in, Civilizacion &c)
     {

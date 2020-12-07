@@ -5,6 +5,7 @@
 
 
 #include "videogame.h"
+#include "menualdeano.h"
 
 using namespace std;
 
