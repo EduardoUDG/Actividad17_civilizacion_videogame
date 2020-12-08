@@ -4,6 +4,7 @@
 
 #include "civilizacion.h"
 #include <vector>
+#include <iomanip>
 
 class VideoGame
 { 
@@ -17,9 +18,6 @@ public:
 
     void agregarPersonaje(const Civilizacion &p);
     void mostrar();
-    void respaldar_tabla();
-    void respaldar();
-    void recuperar();
 
     void insertar(const Civilizacion &c, size_t pos);
     size_t size();
@@ -38,6 +36,9 @@ public:
     Civilizacion* buscar(const Civilizacion &c);
     Civilizacion* modificar(Civilizacion &c);
 
+    
+    void respaldarCivilizacion();
+    void recuperarCivilizacion();
 
     friend VideoGame& operator<<(VideoGame &v, const Civilizacion &p)
     {
@@ -46,19 +47,26 @@ public:
         return v;
     }
 
-  /*   friend ostream& operator<<(ostream &out, const VideoGame &c)
+
+
+        // Respaldar
+    friend ostream& operator<<(ostream &out, const VideoGame &c)
     {
         out << left;
         out << setw(20) << c.nombreGame;
         out << endl;
         return out;
     }
+
+        // Recuperar
     friend istream& operator>>(istream &in, VideoGame &v){
+        string s;
+        
         cout << "Nombre de usuario: ";
         getline(cin, v.nombreGame);
         
         return in;
-    }   */
+    }  
 
 };
 

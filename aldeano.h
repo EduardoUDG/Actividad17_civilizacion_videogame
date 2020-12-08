@@ -4,6 +4,7 @@
 #include <iostream>
 #include <iomanip>
 
+
 using namespace std;
 
 class Aldeano
@@ -24,6 +25,12 @@ public:
 
     void setSalud(int salud);
     int getSalud() const;
+
+
+    // Respaldar aldeano
+    void respaldarAldeano();
+
+
 
     /* Primera carga de extraccion */
     friend ostream& operator<<(ostream &out, const Aldeano &j)
