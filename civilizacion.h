@@ -67,7 +67,8 @@ public:
     void buscarNombreAldeano(const string &nombre);
     void buscarAldeano(const string &nombre);
     Aldeano* modificarAldeano(Aldeano &c);
-
+    void respaldar_aldeanos();
+    void recuperar_aldeanos();
 
 
 

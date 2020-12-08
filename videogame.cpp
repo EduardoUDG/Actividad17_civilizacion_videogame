@@ -74,24 +74,30 @@ void VideoGame::respaldarCivilizacion(){
         for (int i = 0; i < _civilizacion.size(); ++i){
             Civilizacion &c = _civilizacion[i];
             archivo << c.getNombre()<< endl;
+            archivo << c.getUbicacionX()<< endl;    
+            archivo << c.getUbicacionY()<< endl;
+            archivo << c.getPuntuacion()<< endl;
         }
     }
     archivo.close();
 } 
 
-void VideoGame::recuperar(){
-    ifstream archivo("_civilizacion.txt");
+
+void VideoGame::recuperarCivilizacion(){
+    ifstream archivo("_civilizaciones.txt");
+
     if (archivo.is_open()){
         string temp;
         float ubicacionX;
         float ubicacionY;
-        float puntuacion;
+        int puntuacion;
         Civilizacion p;
 
         while (true){
             getline(archivo, temp); // Lee nombre
+
             if(archivo.eof()){ break;}
-            p.setNombre(temp);
+            p.setNombre(temp); 
 
             getline(archivo, temp); // Lee UbicacionX
             ubicacionX = stof(temp);       // string to float
@@ -105,11 +111,15 @@ void VideoGame::recuperar(){
             puntuacion = stoi(temp);       // string to float
             p.setPuntuacion(puntuacion);
 
-            agregarPersonaje(p);
+            p.recuperar_aldeanos();
+
+            insertar(p, 0);
+            
         }
         
     }
     archivo.close();
+    
 }
 
 void VideoGame::insertar(const Civilizacion &c, size_t pos){

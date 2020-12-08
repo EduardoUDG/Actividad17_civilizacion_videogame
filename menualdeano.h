@@ -45,6 +45,7 @@ void menuAldeano(Civilizacion &p){
         cout << "4) Buscar Aldeano" << endl;
         cout << "5) Modificar Aldeano" << endl;
         cout << "6) Mostrar" << endl;
+        cout << "7) Respaldar aldeano" << endl;
         cout << "0) Salir" << endl;
         cout << "Opcion: ";
         getline (cin, opcion);
@@ -178,6 +179,13 @@ void menuAldeano(Civilizacion &p){
             system ("pause");
         }
 
+
+        // Respaldar Aldeano
+        else if (opcion == "7"){   
+            system ("cls");
+            p.respaldar_aldeanos();
+            system ("pause");
+        }
 
             // Salir
         else if (opcion == "0"){   

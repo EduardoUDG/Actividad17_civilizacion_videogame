@@ -1,4 +1,5 @@
 #include "civilizacion.h"
+#include<fstream>
 
 Civilizacion::Civilizacion()
 {
@@ -49,6 +50,59 @@ float Civilizacion::getPuntuacion(){
 
 
 /* ------------------------ ALDEANOS -------------------------- */
+
+
+//---Respaldar aldeanos
+void Civilizacion::respaldar_aldeanos()
+{
+    ofstream aldeanosOF(getNombre() + ".txt", ios::out);
+    
+    for (auto it = aldeanos.begin(); it != aldeanos.end(); ++it) {
+        Aldeano &aldeano = *it; 
+        aldeanosOF << aldeano.getNombreAldeano() << endl;
+        aldeanosOF << aldeano.getEdad()   << endl;
+        aldeanosOF << aldeano.getGenero() << endl;
+        aldeanosOF << aldeano.getSalud()  << endl;
+    }
+    aldeanosOF.close();
+}
+
+
+
+
+    // Recuperar aldeanos
+void Civilizacion::recuperar_aldeanos(){
+    ifstream archivo(getNombre() + ".txt");
+    if (archivo.is_open()){
+        string temp;
+        int _edad;
+        int _salud;
+        Aldeano p;
+
+        while (true){
+            getline(archivo, temp); // Lee nombre
+            if(archivo.eof()){ break;} cin.sync();
+            p.setNombreAldeano(temp);
+
+            getline(archivo, temp); // Lee UbicacionX
+            _edad = stof(temp); cin.sync();       // string to float
+            p.setEdad(_edad);
+            
+            getline(archivo, temp); // Lee UbicacionY
+            if(archivo.eof()){ break;} cin.sync();   // string to float
+            p.setGenero(temp);
+            
+            getline(archivo, temp); // Lee Puntuacion
+            puntuacion = stoi(temp); cin.sync();      // string to float
+            p.setSalud(puntuacion);
+
+            agregarFinal(p);
+        }
+    }
+    archivo.close();
+}    
+
+
 
     // Nombre de la seleccion
 void Civilizacion::setNombreList(const string &nombreList){

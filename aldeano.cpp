@@ -35,3 +35,4 @@ void Aldeano::setSalud(int salud) {
 int Aldeano::getSalud() const {
     return salud;
 }
+
